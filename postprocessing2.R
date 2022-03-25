@@ -26,11 +26,10 @@ cent                                                          <- c(dbp.cent.val,
 burnt                                                         <- seq(1,2001,1)
 title                                                         <- c("Diastolic","Systolic","Interaction")
 
-#ch                                                            <- 6
+#ch                                                           <- 6
 
 ############### Baseline matrix of country-year estimates for 50 y.o.'s #########
 theta1                                                        <- as.matrix(theta[burnt,]) #as.matrix(chains[[ch]]$theta[burnt,])#matrix(unlist(read.csv('C:\\Users\\mariz\\Downloads\\c_theta1.csv')),1500,dim(F)[2])
-#theta1                                                        <- theta[burnt,c(1:all,((3*N+1):(3*N+p)))]
 u1                                                            <- as.matrix(u[burnt,]) #as.matrix(chains[[ch]]$u[burnt,])
 v1                                                            <- as.matrix(v[burnt,]) #[as.matrix(chains[[ch]]$v[burnt,])
 sv1                                                           <- as.matrix(sv[burnt,]) #as.matrix(chains[[ch]]$sv[burnt,])
