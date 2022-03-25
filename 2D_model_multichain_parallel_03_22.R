@@ -319,7 +319,7 @@ MCMC <- function(){
   filename                                        <- paste0("Model",mod.no,"_mean_",sex,"_",variable,"_Seed_",seedVal)    # Sets a base filename used throughout the code
   
   ##### COVARIATES INPUT   #####################################################
-  covar                                           <- read.csv("C:\\Users\\Mariza\\Desktop\\2D_model_Results_19-03-22\\Data\\covariates_2017_01_11.csv", header=TRUE)
+  covar                                           <- read.csv("covariates_2017_01_11.csv", header=TRUE)
   covar                                           <- covar[order(covar$region,covar$country,covar$data_year),]                                                  # Sort covariate dataset by region, country and year
   head(covar)
   TenYearWeightedAvg                              <- function(var) {                                                      # Smooths the country-level covariates using a triangularly-weighted moving average
@@ -335,7 +335,7 @@ MCMC <- function(){
   
   ##### DATA INPUT ###############################################################
   
-  data                                            <- read.csv("C:\\Users\\Mariza\\Desktop\\2D_model_Results_19-03-22\\Data\\BP_STEPS_dataset_2021_07_21.csv")#Blood Pressure
+  data                                            <- read.csv("BP_STEPS_dataset_2021_07_21.csv")#Blood Pressure
   data                                            <- data[,c("id_study","sex","age_mean","mean_sbp","mean_dbp","se_sbp","se_dbp","mid_year","survey_type",       # Columns used in analysis
                                                              "urban_rural","Country","Region","Superregion")]
   subset                                          <- data[data$sex==sex.val,]                                                                              # Subset data for gender being modelled
